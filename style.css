@@ -19,6 +19,7 @@ body{
 
 
 .container{
+    display: inline-block;
     background: rgba(84, 84, 87, 0.5);
     padding: 2rem;
     border-radius: 1rem;
