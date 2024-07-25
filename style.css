@@ -12,17 +12,22 @@ body{
     background-size: 100%;
     background-position: center center;
     color: #ffffff;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
 }
+
 
 .container{
     background: rgba(84, 84, 87, 0.5);
     padding: 2rem;
     border-radius: 1rem;
-    min-height: 45vh;
-    width: 40vh;
+    height: 340px;
+    width: 280px;
     backdrop-filter: blur(100%);
     border: 1px solid rgba(255,255, 255, 0.3);
-
+    max-width: 90%;
+    backdrop-filter: blur(100%);
 }
 
 .container h2{
@@ -127,3 +132,4 @@ form button:hover{
         background-position: center center; /* Adjust background position as needed */
     }
 }
+
