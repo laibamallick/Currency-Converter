@@ -42,10 +42,11 @@ const updateFlag = (element) => {
 btn.addEventListener("click",(evt)=>{
   evt.preventDefault();
   const inputVal = document.querySelector(".amount input");
-  let amountVal = inputVal.value;
-  if(amountVal==="" || amountVal < 1){
-    amountVal = 1
-    inputVal.value = "1"
+  let amountVal = parseInt(inputVal.value);
+
+  if (!(/^\d+$/.test(inputVal.value)) || amountVal === "" || amountVal < 1) {
+    amountVal = 1;
+    inputVal.value = "1";
   }
 
   getExchangeRate();
@@ -87,20 +88,3 @@ let getExchangeRate = async () => {
   }
 };
 // ------------------END---------------------
-
-
-
-//Previous Code
-// let getExhangeRate = () => {
-//   let url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${fromCurr.value}`;
-//   fetch(url).then((res)=>{
-//     res.json()
-//   }).then((data)=>{
-//     //Getting exchange rate
-//     let exchangeRate = data.conversion_rates[toCurr.value];
-//     //Getting total exchange rate
-//     let totalExchangeRate = (amountVal * exchangeRate).toFixed(2);
-//     msg.innerHTML =  `${amountVal} ${fromCurr.value} = ${totalExchangeRate} ${toCurr.value}`;
-//   })
-
-//}
