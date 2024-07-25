@@ -1,136 +1,140 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
-body{
-    position: fixed;
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url("assests/bg.jpg");
-    background-size: 100%;
-    background-position: center center;
+    background: url("assets/bg.jpg");
+    background-size: cover; /* Ensure background covers the entire viewport */
+    background-position: center;
     color: #ffffff;
-    height: 100%;
-    width: 100%;
     overflow: auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Apply font family globally */
 }
 
-
-.container{
-    display: inline-block;
+.container {
     background: rgba(84, 84, 87, 0.5);
     padding: 2rem;
     border-radius: 1rem;
-    height: 340px;
-    width: 280px;
-    backdrop-filter: blur(100%);
-    border: 1px solid rgba(255,255, 255, 0.3);
     max-width: 90%;
-    backdrop-filter: blur(100%);
+    width: 280px; /* Default width */
+    height: 340px; /* Default height */
+    max-height: 80vh; /* Limit height to 80% of viewport height */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px); /* Reduce blur for performance */
+    margin: 2rem; /* Add space around container */
 }
 
-.container h2{
+.container h2 {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 1rem; /* Add spacing below heading */
 }
 
-p{
-    padding-bottom: 5px;
+p {
     font-size: 1rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-left: 2px;
-
+    margin-bottom: 0.5rem; /* Add space below paragraphs */
 }
 
-form{
-    margin: 2rem 0 2rem 0;
+form {
+    margin-top: 1.5rem; /* Adjust top margin */
+    margin-bottom: 1.5rem; /* Adjust bottom margin */
 }
 
-form select,button,input{
+form select,
+form button,
+form input {
     width: 100%;
     border: none;
     outline: none;
     border-radius: 0.75rem;
+    padding: 0.75rem; /* Increase padding for better touch targets */
 }
 
-form input{
-    font-size: 1rem;
-    height: 2rem ;
-    padding-left: 4px;
-}
-.amount input{
+.amount input {
     font-size: 0.75rem;
     color: black;
-    width: 100%;
-    border-radius: 0.5rem;  
-    border:1px solid lightgrey;
+    border: 1px solid lightgrey;
+    border-radius: 0.5rem;
+    padding: 0.5rem; /* Adjust padding */
     background: none;
     color: #ffffff;
 }
 
-.dropdown{
+.dropdown {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 1rem;
+    margin-bottom: 1rem; /* Adjust margin */
 }
 
-.select-container img{
-    max-width: 1.75rem;
-}
-
-.select-container{
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-    padding-left: 5px;
-    padding-right: 5px;
+.select-container {
+    padding: 0.25rem; /* Adjust padding */
     display: flex;
     justify-content: center;
     align-items: center;
     width: 6rem;
-    border-radius: 0.5rem;  
-    border:1px solid lightgrey;
-}
-.select-container select{
-    background: none;
-    color:#ffffff ;
-}
-.dropdown i {
-    margin-top: 1rem;
-    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid lightgrey;
 }
 
-.select-container select{
+.select-container img {
+    max-width: 1.75rem;
+}
+
+.select-container select {
     font-size: 0.75rem;
     width: auto;
 }
 
-.msg{
-    margin: 2rem 0 2rem 0;
+.msg {
+    margin-top: 2rem; /* Adjust top margin */
+    margin-bottom: 2rem; /* Adjust bottom margin */
     text-align: center;
-
 }
 
-form button{
+form button {
     height: 3rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #af4D98;
     color: #ffffff;
-    cursor: pointer;
-    font-size: 1rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
 }
-form button:hover{
+
+form button:hover {
     background-color: #560b45;
 }
 
-/* Styles for mobile landscape screens */
-@media (max-width: 1024px) and (orientation: landscape) {
+/* Media query for smaller screens */
+@media (max-width: 768px) {
     .container {
-        width: 40%;
-        background-size: auto; /* Adjust background size as needed */
-        background-position: center center; /* Adjust background position as needed */
+        width: 90%; /* Adjust width for smaller screens */
+        height: auto; /* Allow height to adjust based on content */
+        max-height: none; /* Remove max-height restriction */
+    }
+
+    form button {
+        height: 2.5rem; /* Adjust button height for smaller screens */
+        font-size: 0.9rem; /* Adjust button font size for smaller screens */
+    }
+
+    .msg {
+        margin-top: 1rem; /* Adjust top margin */
+        margin-bottom: 1rem; /* Adjust bottom margin */
     }
 }
 
+/* Media query for larger screens */
+@media (min-width: 1200px) {
+    .container {
+        width: 40%; /* Adjust width for larger screens */
+    }
+}
