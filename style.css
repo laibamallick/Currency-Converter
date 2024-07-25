@@ -88,7 +88,7 @@ form input {
 
 .select-container select {
     font-size: 0.75rem;
-    width: auto;
+    width: fit-content;
     background: none;
     color: #ffffff;
 }
@@ -135,7 +135,7 @@ form button:hover {
 /* Media query for landscape mobile screens */
 @media (max-width: 1024px) and (orientation: landscape) {
     .container {
-        width: 60%; /* Adjust width for landscape mobile */
+        width: 40%; /* Adjust width for landscape mobile */
         max-width: 80%; /* Further limit maximum width */
     }
 
